@@ -16,6 +16,13 @@ resource "aws_instance" "ec2_mumbai" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "terraform-atlantis"
+    Name = "terraform-atlantis-demo"
+  }
+}
+resource "aws_s3_bucket" "atlantis" {
+  bucket = "my-tf-test-bucket-25467"
+
+  tags = {
+    Name        = "My atlantis bucket"
   }
 }
